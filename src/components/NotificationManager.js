@@ -17,7 +17,8 @@ const NotificationManager = ({ members, tasks, newTaskId }) => {
 
   const sendNotification = async (member, message, methods) => {
     try {
-      const response = await fetch('http://localhost:5051/api/notify', {
+      //const response = await fetch('http://localhost:5051/api/notify', { //Local
+        const response = await fetch('https://familytaskbackv1.onrender.com/api/notify', { //Web service
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ member, message, methods }),
